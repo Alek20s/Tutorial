@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+
+  
+
+
+
+    <title>Adventure</title>
+</head>
+<body>
+   <h1>My Adventure Game</h1>
+   <img src="static/{{data.image}}">
+
+
+   <h2>{{step}}</h2>
+   <p>{{data.text}}</p>
+   <ol>
+    {% for choice, destination in data.choices.items() %}
+     <li><a href="{{ destination }}">{{ choice }}</a></li>
+    {% endfor %}
+
+    <p>Click on the play button to play a sound:</p>
+
+    <a href="https://www.computerhope.com/jargon/m/example.mp3">Play sound file</a>
+
+<audio controls> 
+  <source src="static/{{data.audio}}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+</body>
+</html>
